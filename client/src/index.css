@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+* {
+  font-family: 'Figtree', sans-serif;
+  /* font-family: 'Inconsolata', monospace;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Kalam', cursive;
+  font-family: 'Karla', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif; */
+}
+
+html {
+  scroll-behavior: smooth;
+}

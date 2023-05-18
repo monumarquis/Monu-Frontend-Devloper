@@ -1,9 +1,15 @@
 import "./App.css";
+import "./responsive.css";
+import Nav from "./components/Nav";
+import TopBanner from "./components/TopBanner";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <header>
+        <Nav />
+      </header>
+      <TopBanner />
     </div>
   );
 }

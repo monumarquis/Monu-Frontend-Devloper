@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+/* Nav Bar */
+:root {
+    --red-color: #e20935;
+    --white-color: #fff;
+    --black-color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.link {
+    color: var(--black-color);
+    font-family: 'Zilla Slab', serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.link:hover,
+.link:focus {
+    color: #2d3436;
 }
 
-.App-link {
-  color: #61dafb;
+.link:before {
+    content: '';
+    background: var(--red-color);
+    height: 2px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link:hover:before {
+    width: 100%;
+}
+
+
+.nav-links {
+    list-style: none;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li a {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.thm-btn {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none !important;
+    background-color: var(--red-color);
+    color: var(--white-color);
+    font-size: 19px;
+    font-weight: 600;
+    padding: 9px 49px 13px;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.thm-btn:hover {
+    color: var(--white-color);
+}
+
+.thm-btn:hover:before {
+    top: -40%;
+}
+
+.thm-btn::before {
+    transition-duration: 800ms;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    content: "";
+    top: 110%;
+    left: 50%;
+    background-color: var(--black-color);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* mobilenav */
+.mobile-nav {
+    background-color: #0000009a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100vw);
+    -webkit-transition: transform 1s ease-in-out, opacity 1s ease-in-out, visibility 1s ease-in-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.inner-mobile-nav {
+    background-color: var(--black-color);
+    height: 100vh;
+    width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100vw);
+    transform-origin: right;
+    -webkit-transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+}
+
+.inner-mobile-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.mobile-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mobile-nav-links li {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.mobile-nav-links li a {
+
+    color: var(--white-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.mobile-nav-links li::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background-color: #413f3f;
+    width: 100%;
+}
+
+/* slider */
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-one {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner-one img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
 }
